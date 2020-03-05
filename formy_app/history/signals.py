@@ -39,7 +39,6 @@ def track_user_actions(sender, instance, **kwargs):
             data = instance.__dict__.copy()
             data.__delitem__("_state")
             try:
-                print ("here 1")
                 history = models.History(
                     table_name=str(instance._meta.db_table),
                     user=current_request.user,

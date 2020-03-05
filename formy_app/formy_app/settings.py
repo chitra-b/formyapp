@@ -172,7 +172,7 @@ SIMPLE_JWT = {
 }
 
 LOGIN_URL = "login"
-CORS_ORIGIN_WHITELIST = ["http://localhost:3000"]
+CORS_ORIGIN_WHITELIST = ["http://localhost:3000", "http://localhost:3001"]
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
