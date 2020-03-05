@@ -6,8 +6,7 @@ import { Menu, Dropdown, Button, Icon } from "antd";
 //     controls  : list of items
 //     controlsname : name to display on the dropdown button
 
-function ResponsiveActions(controls, controlsname) {
-  console.log(controls);
+function ResponsiveActions({controls, controlsname}) {
   let menu = controls
     ? controls.map((item, idx) => <Menu.Item key={idx}>{item}</Menu.Item>)
     : "";

@@ -7,14 +7,16 @@ import Forms from "../forms/formsDashboard/formsdashboard";
 import EditForm from "../forms/editForm/editform";
 import ViewForm from "../forms/viewForm/viewform";
 import UserProfile from "../users/userProfile/user";
-import { PasswordResetForm,PasswordResetConfirmForm} from "../users/authentication/resetPassword/PasswordReset";
+import {
+  PasswordResetForm,
+  PasswordResetConfirmForm
+} from "../users/authentication/resetPassword/PasswordReset";
 import { logout } from "../users/authentication/login/action";
 import { loadUserProfile } from "../users/userProfile/action";
 import { Link } from "react-router-dom";
 import * as URL from "../common/url";
 // import SignIn from "../../pages/authentication/SignIn";
 // import Authentication from "../container/Authentication";
-
 
 const MainRoute = ({ component: Component, ...rest }) => {
   return (
@@ -54,12 +56,11 @@ const routes = {
     },
     { path: `/profile`, component: UserProfile },
     {
-      path: `URL.URL_FORMS + /:id(\\d+)`,
+      path: `${URL.URL_FORMS} + /:id(\\d+)`,
       component: ViewForm
     },
     {
-      path: 
-        `URL.URL_FORMS_EDIT + /:id(\\d+)`,
+      path: `${URL.URL_FORMS_EDIT}/:id(\\d+)`,
       component: EditForm
     },
     {
@@ -69,30 +70,31 @@ const routes = {
     {
       path: URL.URL_FORGOT_PASSWORD + "/",
       component: PasswordResetForm
-    }]
-//   ],
-//   auth: [
-//     {
-//       path: URL.URL_SIGN_IN,
-//       component: SignIn
-//     }
-//   ]
+    }
+  ]
+  //   ],
+  //   auth: [
+  //     {
+  //       path: URL.URL_SIGN_IN,
+  //       component: SignIn
+  //     }
+  //   ]
 };
 
 export default function Router() {
   return (
     // <FullpageErrorBoundary>
-      <Switch>
-        {routes.main.map(({ path, component }) => (
-          <MainRoute key={path} path={path} component={component} exact />
-        ))}
+    <Switch>
+      {routes.main.map(({ path, component }) => (
+        <MainRoute key={path} path={path} component={component} exact />
+      ))}
 
-        {/* {routes.auth.map(({ path, component }) => (
+      {/* {routes.auth.map(({ path, component }) => (
           <AuthRoute key={path} path={path} component={component} exact />
         ))} */}
 
-        {/* <Route component={NotFound} /> */}
-      </Switch>
+      {/* <Route component={NotFound} /> */}
+    </Switch>
     // {/* </FullpageErrorBoundary> */}
   );
 }
