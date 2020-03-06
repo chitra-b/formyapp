@@ -101,7 +101,7 @@ WSGI_APPLICATION = "formy_app.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "formy_db",
+        "NAME": "formy_db_v1",
         "USER": "root",
         "PASSWORD": "root123",
         "HOST": "localhost",
